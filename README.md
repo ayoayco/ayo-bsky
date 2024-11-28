@@ -2,6 +2,10 @@
 
 just wanna automate some bsky posts...
 
+## Why
+
+Because why not
+
 ## Development
 
 1. Set up your **Debian** (for other environments, search for counterpart instructions)
