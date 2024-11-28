@@ -1,2 +1,3 @@
 [ayo-bsky]
 password = "yo_mama"
+user = "user.bsky.social"
