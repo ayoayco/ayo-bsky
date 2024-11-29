@@ -1,14 +1,18 @@
-from atproto import Client
+from atproto import Client, client_utils
 import configparser
 
-config = configparser.RawConfigParser()
-config.read('config.txt')
+def main():
+    config = configparser.RawConfigParser()
+    config.read('config.txt')
 
-user = config['ayo-bsky']['user'].strip('"')
-password = config['ayo-bsky']['password'].strip('"')
+    user = config['ayo-bsky']['user'].strip('"')
+    password = config['ayo-bsky']['password'].strip('"')
 
-client = Client()
-client.login(user, password)
+    client = Client()
+    client.login(user, password)
 
-post = client.send_post('test?')
+    text = client_utils.TextBuilder().text('Hello World from ').link('Python SDK', 'https://atproto.blue')
+    client.send_post(text)
 
+if __name__ == "__main__":
+    main()
